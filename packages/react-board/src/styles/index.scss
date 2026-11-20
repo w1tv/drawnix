@@ -57,7 +57,8 @@
     &.element-moving {
         .element-active-host {
             & > g:not(.active-with-moving) {
-                display: none;
+                visibility: hidden;
+                pointer-events: none;
             }
         }
     }
