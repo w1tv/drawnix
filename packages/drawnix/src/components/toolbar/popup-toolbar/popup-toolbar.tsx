@@ -1,5 +1,6 @@
 import Stack from '../../stack';
-import { FontColorIcon } from '../../icons';
+import { BoldIcon, FontColorIcon, ItalicIcon, UnderlineIcon } from '../../icons';
+import { ToolButton } from '../../tool-button';
 import {
   ATTACHED_ELEMENT_CLASS_NAME,
   getRectangleByElements,
@@ -42,6 +43,7 @@ import { Freehand } from '../../../plugins/freehand/type';
 import { PopupLinkButton } from './link-button';
 import { ArrowMarkButton } from './arrow-mark-button';
 import { MoreOptionsButton } from './more-options-button';
+import { setTextBold, setTextItalic, setTextUnderline } from '../../../transforms/property';
 
 export const PopupToolbar = () => {
   const board = useBoard();
@@ -176,6 +178,37 @@ export const PopupToolbar = () => {
                 currentFontSize={getFontSizeFromMarks(state.marks)}
                 title={t('popupToolbar.fontSize')}
               />
+            )}
+            {state.hasText && (
+              <>
+                <ToolButton
+                  type="icon"
+                  key="bold"
+                  icon={<BoldIcon />}
+                  selected={!!state.marks?.bold}
+                  title={t('popupToolbar.bold')}
+                  aria-label={t('popupToolbar.bold')}
+                  onClick={() => setTextBold(board)}
+                />
+                <ToolButton
+                  type="icon"
+                  key="italic"
+                  icon={<ItalicIcon />}
+                  selected={!!state.marks?.italic}
+                  title={t('popupToolbar.italic')}
+                  aria-label={t('popupToolbar.italic')}
+                  onClick={() => setTextItalic(board)}
+                />
+                <ToolButton
+                  type="icon"
+                  key="underline"
+                  icon={<UnderlineIcon />}
+                  selected={!!state.marks?.underlined}
+                  title={t('popupToolbar.underline')}
+                  aria-label={t('popupToolbar.underline')}
+                  onClick={() => setTextUnderline(board)}
+                />
+              </>
             )}
             {state.hasFontColor && (
               <PopupFontColorButton

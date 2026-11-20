@@ -10,7 +10,7 @@ import {
   removeHexAlpha,
 } from '../utils/color';
 import { getCurrentFill, getCurrentStrokeColor, isClosedElement } from '../utils/property';
-import { DEFAULT_FONT_SIZE, TextTransforms } from '@plait/text-plugins';
+import { DEFAULT_FONT_SIZE, MarkTypes, TextTransforms } from '@plait/text-plugins';
 
 export const setFillColorOpacity = (board: PlaitBoard, fillOpacity: number) => {
   PropertyTransforms.setFillColor(board, null, {
@@ -113,4 +113,16 @@ export const setTextFontSize = (board: PlaitBoard, size: number) => {
     return;
   }
   TextTransforms.setFontSize(board, String(size) as any, DEFAULT_FONT_SIZE);
+};
+
+export const setTextBold = (board: PlaitBoard) => {
+  TextTransforms.setTextMarks(board, MarkTypes.bold);
+};
+
+export const setTextItalic = (board: PlaitBoard) => {
+  TextTransforms.setTextMarks(board, MarkTypes.italic);
+};
+
+export const setTextUnderline = (board: PlaitBoard) => {
+  TextTransforms.setTextMarks(board, MarkTypes.underline);
 };
