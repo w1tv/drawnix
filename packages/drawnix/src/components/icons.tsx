@@ -597,3 +597,22 @@ export const FontSizeStepperDownIcon: React.FC<React.SVGProps<SVGSVGElement>> = 
     </svg>
   );
 };
+
+export const BoldIcon = createIcon(
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 4H13C15.2091 4 17 5.79086 17 8C17 10.2091 15.2091 12 13 12H6V4Z" fill="currentColor" />
+    <path d="M6 12H15C17.2091 12 19 13.7909 19 16C19 18.2091 17.2091 20 15 20H6V12Z" fill="currentColor" />
+  </svg>
+);
+
+export const ItalicIcon = createIcon(
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 4H14L11 20H7L10 4Z" fill="currentColor" />
+  </svg>
+);
+
+export const UnderlineIcon = createIcon(
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 20V18H18V20M12 4V16C12 18.2091 10.2091 20 8 20C5.79086 20 4 18.2091 4 16V4H6V16C6 17.1046 6.89543 18 8 18C9.10457 18 10 17.1046 10 16V4H12Z" fill="currentColor" />
+  </svg>
+);

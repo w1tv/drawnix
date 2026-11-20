@@ -9,11 +9,11 @@
 - [x] 启动开发服务器 `http://localhost:7200`
 - [x] 理解代码结构
 
-## 阶段二：Issue 评估
+## 阶段二：Issue 评估 ✅
 
-- [ ] 三维打分（用户影响 / 修复成本 / 依赖风险）
-- [ ] 优先级矩阵定位
-- [ ] 确定首批修复清单
+- [x] 三维打分（用户影响 / 修复成本 / 依赖风险）
+- [x] 优先级矩阵定位
+- [x] 确定首批修复清单
 
 ## 阶段三：单 Issue 修复 SOP
 
@@ -39,5 +39,24 @@
 
 ## 当前状态
 
-**阶段：二**  
-**首批候选：** #323（图片残影）、#478（文字样式）
+**阶段：四（进行中）**
+
+### ✅ 已完成
+
+- **#323 图片拖动残影** — CSS 修复：`display:none` → `visibility:hidden + pointer-events:none`
+  - 分支：`fix/323-image-drag-ghost`
+  - 已合并到 develop：`5bdc46c`
+
+- **#478 文字样式（加粗/斜体/下划线）** — UI 按钮 + 属性函数
+  - 分支：`fix/478-text-styling`
+  - 新增 `setTextBold/setTextItalic/setTextUnderline`（封装 `TextTransforms.setTextMarks`）
+  - 新增 `BoldIcon/ItalicIcon/UnderlineIcon`
+  - 在 popup-toolbar 中添加三个 toggle 按钮，支持 5 种语言翻译
+  - 底层 `@plait/text-plugins` 的 `MarkTypes.bold/italic/underline` 已内置，快捷键 Ctrl+B/I/U 也已支持
+
+### 📋 待修
+
+- **#392** 导出文本截断
+- **#177** IndexedDB 存储
+- **#413** 对齐 + 新建画布
+- **#474** 思维导图键盘修复
